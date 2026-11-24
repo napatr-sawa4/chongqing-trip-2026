@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ทริปฉงชิ่ง 26–29 พ.ย.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, friendly, big and clear enough for grandparents on a phone
+   IDEA: a picture-book trip map where a little traveller walks or rides from stop to stop
+   PICTURE: a soft river map; the traveller arrives and the stop number turns into a cartoon of the place
+   COLOUR and TYPE: sky blue band, white cards, one sunny yellow for the traveller; Noto Sans Thai at 18px+
+   LAYOUT: day tabs, map, two big buttons, one card; map beside the card above 900px */
+:root{color-scheme:light dark;--bg:light-dark(#f4f9fe,#0b1622);--ink:light-dark(#0f2740,#e8f1fa);--mute:light-dark(#4b6075,#a9bdd0);--blue:#1f6fd1;--blueInk:light-dark(#1559ad,#8cc2ff);--land:light-dark(#eaf3fb,#12243a);--river:light-dark(#a9d3f2,#2a5d8c);--card:light-dark(#fff,#12202f);--line:light-dark(#d3e3f2,#26405a);--soft:light-dark(#eaf3fd,#18304a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 "Noto Sans Thai",system-ui,sans-serif;overflow-x:clip}
+[lang=zh]{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+.top{background:var(--blue);color:#fff;padding:20px max(4vw,14px) 14px}
+.wrap{max-width:1240px;margin:0 auto}
+h1{margin:0;font-size:clamp(30px,6vw,42px);line-height:1.1;font-weight:800}
+.sub{margin:4px 0 14px;font-size:17px}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:640px}
+.tabs button{min-height:60px;padding:6px 4px;border-radius:14px;border:2px solid rgba(255,255,255,.6);background:transparent;color:#fff;font:800 18px/1.2 inherit;cursor:pointer}
+.tabs button small{display:block;font-weight:400;font-size:15px}
+.tabs button[aria-selected=true]{background:#fff;color:#1559ad;border-color:#fff}
+button:focus-visible{outline:3px solid #ffc845;outline-offset:2px}
+.main{display:grid;gap:16px;grid-template-columns:minmax(0,1fr);padding:16px max(4vw,14px) 40px}
+.fig{position:relative;height:clamp(320px,50vh,480px);border-radius:20px;overflow:hidden;background:var(--land);border:1px solid var(--line)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.hint{margin:6px 4px 0;color:var(--mute);font-size:15px}
+.dayline{margin:0 0 12px;font-size:20px;font-weight:800}
+.dayline span{display:block;font-size:17px;font-weight:400;color:var(--mute)}
+.ctrl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:10px;margin-bottom:8px}
+.ctrl button{min-height:60px;border-radius:16px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:800 19px inherit;cursor:pointer}
+.ctrl .go{background:var(--blue);border-color:var(--blue);color:#fff}
+.ctrl button:disabled{opacity:.35;cursor:default}
+.count{text-align:center;color:var(--mute);font-size:16px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.time{font-size:clamp(30px,7vw,38px);font-weight:800;line-height:1.1;color:var(--blueInk);white-space:nowrap}
+.card h2{margin:6px 0 14px;font-size:24px;line-height:1.35}
+.zh{background:var(--soft);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.zh span{display:block;font-size:30px;font-weight:700;line-height:1.3}
+.zh .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:6px}
+.zh small{color:var(--mute);font-size:15px}
+.copy{min-height:44px;padding:0 14px;border-radius:12px;border:2px solid var(--blue);background:transparent;color:var(--blueInk);font:800 16px inherit;cursor:pointer}
+.how{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-bottom:14px;font-size:18px}
+.pill{padding:4px 14px;border-radius:999px;font-weight:800;white-space:nowrap;background:var(--blue);color:#fff}
+.ticket{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;border:2px solid var(--blue);border-radius:16px;padding:14px;margin-bottom:14px;background:var(--soft)}
+.ticket div{display:flex;flex-direction:column}
+.ticket small{color:var(--mute);font-size:15px}
+.ticket b{font-size:19px}.ticket [lang=zh]{font-size:22px;font-weight:700}
+.ticket em{font-style:normal;font-size:28px;font-weight:800;color:var(--blueInk);white-space:nowrap}
+.ticket .arr{font-size:26px;color:var(--blueInk)}
+.notes{margin:0;padding-left:22px}.notes li{margin:6px 0}
+.toast{display:block;min-height:1.4em}
+.lab{font:700 16px "Noto Sans Thai",sans-serif;fill:var(--mute);opacity:.6}
+.rl{font:400 14px "Noto Sans Thai",sans-serif;fill:light-dark(#2d6a9c,#9ccbf0)}
+.nm{font:800 16px "Noto Sans Thai",sans-serif;fill:#fff}
+.nb{font:800 14px "Noto Sans Thai",sans-serif}
+@media (prefers-reduced-motion:no-preference){.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1);transform-box:fill-box;transform-origin:center}@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}}
+@media(min-width:900px){.main{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}.mapbox{position:sticky;top:12px}.fig{height:min(660px,80vh)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<h1>ทริปฉงชิ่ง</h1>
+<p class="sub">26–29 พ.ย. 2026 · เลือกวัน แล้วกด "ต่อไป"</p>
+<nav class="tabs" id="tabs" role="tablist" aria-label="เลือกวัน"></nav>
+</div></header>
+<main class="wrap main">
+<section class="mapbox">
+<div class="fig"><svg id="map" role="img" aria-label="แผนที่เส้นทางของวันที่เลือก"></svg></div>
+<p class="hint">แผนที่วาดแบบง่าย ไม่ใช่สเกลจริง</p>
+</section>
+<section>
+<p class="dayline" id="dayline"></p>
+<div class="ctrl"><button id="prev">ย้อน</button><button id="next" class="go">ต่อไป</button></div>
+<p class="count" id="count"></p>
+<article class="card" id="card" aria-live="polite"></article>
+</section>
+</main>
+<script>
+{
+const P={hotel:[106.5770,29.5577],luohan:[106.5833,29.5612],raffles:[106.5862,29.5655],huoyan:[106.5850,29.5640],shibati:[106.5735,29.5525],beer:[106.5760,29.5545],kuixing:[106.5795,29.5640],bayi:[106.5748,29.5568],cqeast:[106.6520,29.5060],wlS:[107.7000,29.3300],xns:[107.7350,29.4450],sanqiao:[107.7950,29.4300],hyd:[106.5805,29.5655],hotpot:[106.5822,29.5649],ciqikou:[106.4480,29.5815],lmh:[106.5930,29.5555],nanshan:[106.6060,29.5460],nanbin:[106.5850,29.5500],airport:[106.6420,29.7190],bkk:[106.5950,29.6850]};
+const RIV=[
+{w:10,name:"แม่น้ำแยงซี",lab:[106.505,29.486],pts:[[106.36,29.39],[106.46,29.47],[106.51,29.50],[106.54,29.525],[106.555,29.540],[106.572,29.547],[106.585,29.556],[106.592,29.567],[106.61,29.578],[106.64,29.59],[106.68,29.605],[106.74,29.60],[106.80,29.62],[107.0,29.68],[107.39,29.71],[107.7,29.85]]},
+{w:8,name:"แม่น้ำเจียหลิง",lab:[106.50,29.592],pts:[[106.36,29.66],[106.42,29.60],[106.44,29.588],[106.47,29.578],[106.51,29.580],[106.54,29.574],[106.565,29.570],[106.58,29.570],[106.592,29.567]]},
+{w:6,name:"แม่น้ำอู",lab:[107.56,29.49],pts:[[107.85,29.30],[107.76,29.32],[107.66,29.40],[107.55,29.52],[107.45,29.61],[107.39,29.71]]}];
+const DIST=[["หยูจง",[106.545,29.562],1],["เจียงเป่ย",[106.565,29.598],1],["หนานอั้น",[106.615,29.528],1],["อู่หลง",[107.70,29.39],0]];
+const ML={start:"เริ่มวัน",walk:"เดิน",didi:"นั่ง DiDi",train:"รถไฟความเร็วสูง",bus:"รถรับส่ง",plane:"เครื่องบิน"};
+const IC={
+hotel:'<rect x="9" y="9" width="30" height="5" rx="2" fill="#2f5f93"/><rect x="11" y="13" width="26" height="29" rx="2" fill="#5b9bd5"/><rect x="15" y="17" width="5" height="4" fill="#fff"/><rect x="22" y="17" width="5" height="4" fill="#fff"/><rect x="29" y="17" width="5" height="4" fill="#fff"/><rect x="15" y="25" width="5" height="4" fill="#fff"/><rect x="22" y="25" width="5" height="4" fill="#fff"/><rect x="29" y="25" width="5" height="4" fill="#fff"/><rect x="20" y="33" width="8" height="9" rx="1" fill="#2f5f93"/>',
+temple:'<rect x="10" y="41" width="28" height="2" fill="#8a7d6b"/><rect x="15" y="31" width="18" height="10" fill="#d9534f"/><rect x="21" y="34" width="6" height="7" fill="#7a2620"/><polygon points="7,31 24,24 41,31" fill="#28507a"/><rect x="18" y="18" width="12" height="7" fill="#d9534f"/><polygon points="11,19 24,11 37,19" fill="#28507a"/><rect x="23" y="5" width="2" height="7" fill="#28507a"/>',
+towers:'<rect x="6" y="42" width="36" height="2" fill="#8fb3d9"/><rect x="9" y="16" width="6" height="26" fill="#6fa8dc"/><rect x="17" y="10" width="6" height="32" fill="#3d85c6"/><rect x="25" y="10" width="6" height="32" fill="#3d85c6"/><rect x="33" y="16" width="6" height="26" fill="#6fa8dc"/><rect x="8" y="11" width="32" height="4" rx="2" fill="#0b5394"/>',
+food:'<line x1="29" y1="5" x2="21" y2="22" stroke="#8a5a12" stroke-width="2.4" stroke-linecap="round"/><line x1="34" y1="6" x2="25" y2="22" stroke="#8a5a12" stroke-width="2.4" stroke-linecap="round"/><path d="M8 24 H40 A16 14 0 0 1 8 24 Z" fill="#fff" stroke="#3a6ea5" stroke-width="2"/><path d="M12 24 Q16 18 20 24 Q24 18 28 24 Q32 18 36 24" fill="none" stroke="#f2a541" stroke-width="2.4"/><rect x="18" y="37" width="12" height="3" rx="1.5" fill="#3a6ea5"/>',
+stairs:'<path d="M7 42 V36 H13 V30 H19 V24 H25 V18 H31 V12 H41 V42 Z" fill="#d49a5b" stroke="#8a5a2b" stroke-width="1.5" stroke-linejoin="round"/><circle cx="36" cy="7" r="3" fill="#e04b3c"/>',
+beer:'<path d="M30 20 h4 a4 4 0 0 1 4 4 v6 a4 4 0 0 1 -4 4 h-4" fill="none" stroke="#c9961a" stroke-width="3"/><rect x="12" y="15" width="18" height="27" rx="3" fill="#f5c242"/><circle cx="15" cy="14" r="4" fill="#fff"/><circle cx="21" cy="12" r="5" fill="#fff"/><circle cx="27" cy="14" r="4" fill="#fff"/><rect x="16" y="21" width="2.5" height="16" rx="1" fill="#fff" opacity=".6"/>',
+b22:'<rect x="14" y="5" width="20" height="38" rx="2" fill="#7fa7d6"/><rect x="17" y="9" width="5" height="4" fill="#fff"/><rect x="26" y="9" width="5" height="4" fill="#fff"/><rect x="17" y="16" width="5" height="4" fill="#fff"/><rect x="26" y="16" width="5" height="4" fill="#fff"/><rect x="17" y="23" width="5" height="4" fill="#fff"/><rect x="26" y="23" width="5" height="4" fill="#fff"/><text x="24" y="39" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" font-family="sans-serif">22</text><rect x="2" y="5" width="12" height="3" fill="#8a7d6b"/>',
+train:'<line x1="16" y1="37" x2="11" y2="43" stroke="#0b3d7a" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="37" x2="37" y2="43" stroke="#0b3d7a" stroke-width="2.6" stroke-linecap="round"/><rect x="12" y="6" width="24" height="31" rx="8" fill="#1f6fd1"/><rect x="15" y="11" width="18" height="10" rx="3" fill="#dff0ff"/><circle cx="17.5" cy="29" r="2.6" fill="#ffe27a"/><circle cx="30.5" cy="29" r="2.6" fill="#ffe27a"/>',
+bus:'<rect x="7" y="11" width="34" height="23" rx="5" fill="#f2a541"/><rect x="10" y="14" width="8" height="8" rx="1.5" fill="#fff"/><rect x="20" y="14" width="8" height="8" rx="1.5" fill="#fff"/><rect x="30" y="14" width="8" height="8" rx="1.5" fill="#fff"/><circle cx="15" cy="35" r="4.2" fill="#33475b"/><circle cx="33" cy="35" r="4.2" fill="#33475b"/>',
+bridge:'<rect x="4" y="36" width="40" height="7" rx="2" fill="#7cc0ea"/><path d="M5 38 V17 Q24 5 43 17 V38 H33 V31 Q24 19 15 31 V38 Z" fill="#a08c74"/><circle cx="12" cy="13" r="4.5" fill="#5fae5f"/><circle cx="24" cy="9" r="4.5" fill="#4c9a4c"/><circle cx="36" cy="12" r="4.5" fill="#5fae5f"/>',
+lantern:'<rect x="20" y="5" width="8" height="4" rx="1" fill="#7a2620"/><ellipse cx="24" cy="22" rx="13" ry="13" fill="#e04b3c"/><path d="M24 9 V35 M17 11 Q11 22 17 33 M31 11 Q37 22 31 33" fill="none" stroke="#b5332a" stroke-width="1.6"/><rect x="20" y="34" width="8" height="4" rx="1" fill="#7a2620"/><line x1="24" y1="38" x2="24" y2="45" stroke="#f2c14e" stroke-width="2.4"/>',
+hotpot:'<path d="M17 16 q-3 -4 0 -8 M24 15 q-3 -4 0 -9 M31 16 q-3 -4 0 -8" fill="none" stroke="#7fa7d6" stroke-width="2.2" stroke-linecap="round"/><rect x="3" y="22" width="6" height="3.5" rx="1.7" fill="#6b7b8c"/><rect x="39" y="22" width="6" height="3.5" rx="1.7" fill="#6b7b8c"/><path d="M8 24 Q8 41 24 41 Q40 41 40 24 Z" fill="#9aa9b8"/><ellipse cx="24" cy="24" rx="16" ry="5" fill="#d8422f"/><circle cx="18" cy="24" r="2" fill="#7a1e12"/><circle cx="29" cy="23" r="1.8" fill="#ffd166"/>',
+oldtown:'<rect x="10" y="22" width="28" height="20" fill="#f1e3cc"/><path d="M4 21 Q24 7 44 21 L40 23 H8 Z" fill="#33475b"/><rect x="20" y="29" width="8" height="13" fill="#8a5a2b"/><rect x="12" y="27" width="5" height="5" fill="#8a5a2b"/><rect x="31" y="27" width="5" height="5" fill="#8a5a2b"/><ellipse cx="8" cy="29" rx="3" ry="3.8" fill="#e04b3c"/><ellipse cx="40" cy="29" rx="3" ry="3.8" fill="#e04b3c"/>',
+bbq:'<path d="M24 15 q-5 -5 0 -10 q5 5 0 10" fill="#f5a623"/><line x1="16" y1="29" x2="12" y2="43" stroke="#33475b" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="29" x2="36" y2="43" stroke="#33475b" stroke-width="2.6" stroke-linecap="round"/><ellipse cx="24" cy="25" rx="17" ry="6.5" fill="#33475b"/><path d="M10 23 H38 M12 26 H36" stroke="#9aa9b8" stroke-width="1.5"/><rect x="14" y="19" width="8" height="3.2" rx="1.6" fill="#d9734a"/><rect x="25" y="18" width="9" height="3.2" rx="1.6" fill="#d9734a"/>',
+drone:'<line x1="10" y1="16" x2="38" y2="34" stroke="#33475b" stroke-width="2.2"/><line x1="38" y1="16" x2="10" y2="34" stroke="#33475b" stroke-width="2.2"/><ellipse cx="10" cy="15" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="38" cy="15" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="10" cy="35" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="38" cy="35" rx="7" ry="2.2" fill="#7fb2e5"/><rect x="17" y="21" width="14" height="8" rx="3" fill="#1f6fd1"/><circle cx="24" cy="7" r="1.8" fill="#ffc845"/><circle cx="16" cy="5" r="1.3" fill="#ffc845"/><circle cx="32" cy="5" r="1.3" fill="#ffc845"/>',
+plane:'<path d="M24 4 C26.5 4 27 7 27 10 V19 L42 28 V32 L27 27 V36 L32 40 V43 L24 41 L16 43 V40 L21 36 V27 L6 32 V28 L21 19 V10 C21 7 21.5 4 24 4 Z" fill="#1f6fd1"/>'};
+const DAYS=[
+{tab:"วันที่ 1",sub:"พฤ 26",title:"วันที่ 1 · พฤหัสฯ 26 พ.ย.",theme:"เดินเที่ยวในเมือง (หยูจง) ทั้งวัน",stops:[
+{t:"07:30",n:"ออกจากโรงแรม ย่านเจี่ยฟางเปย",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["เจี่ยฟางเปยคือใจกลางเมือง"]},
+{t:"08:00–08:40",n:"วัดหลัวฮั่น",pin:"วัดหลัวฮั่น",ic:"temple",zh:"罗汉寺",at:P.luohan,m:"walk",h:"ราว 10–15 นาที",notes:["วัดเก่าราวพันปี อยู่กลางตึกสูง","มีห้องรูปปั้นพระอรหันต์ 500 องค์"]},
+{t:"09:00–11:00",n:"Raffles City",pin:"Raffles City",ic:"towers",zh:"重庆来福士",at:P.raffles,m:"walk",h:"ราว 10 นาที",notes:["ร้านส่วนใหญ่เปิดราว 10:00","ปลายแหลมตรงนี้คือจุดที่แม่น้ำสองสายมาบรรจบกัน"]},
+{t:"11:00–13:30",n:"บุฟเฟต์ Huoyanli แล้วพักช้อปปิ้ง",pin:"บุฟเฟต์",ic:"food",at:P.huoyan,m:"walk",h:"ย่านเดียวกัน",notes:["ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
+{t:"14:00–16:00",n:"สือปาถี (บันได 18 ขั้น)",pin:"สือปาถี",ic:"stairs",zh:"十八梯",at:P.shibati,m:"didi",h:"ราว 15–20 นาที",notes:["ทางชัน ใส่รองเท้าที่เดินสบาย"]},
+{t:"16:00–17:00",n:"Qingdao Beer Exchange",pin:"ร้านเบียร์",ic:"beer",at:P.beer,m:"walk",h:"ตามแพลน",notes:["ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
+{t:"17:00–18:30",n:"ตึก 22 ชั้น (Kuixinglou)",pin:"ตึก 22 ชั้น",ic:"b22",zh:"魁星楼",at:P.kuixing,m:"walk",h:"เดินกลับเข้าเมือง",notes:["ชั้นบนสุดอยู่ระดับถนนพอดี ถ่ายรูปสนุก"]},
+{t:"19:00–20:00",n:"ถนนปาอี ชิมของกิน",pin:"ถนนปาอี",ic:"food",zh:"八一好吃街",at:P.bayi,m:"walk",h:"ราว 10 นาที",notes:["คนแน่น ระวังมือถือและกระเป๋า"]},
+{t:"20:00",n:"กลับโรงแรม พักผ่อน",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"walk",h:"ราว 5 นาที",notes:[]}]},
+{tab:"วันที่ 2",sub:"ศ 27",title:"วันที่ 2 · ศุกร์ 27 พ.ย.",theme:"นั่งรถไฟไปสะพานสวรรค์ ค่ำกลับมาหงหยาต้ง",stops:[
+{t:"07:00",n:"ออกจากโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["ทุกคนพกพาสปอร์ต ใช้แทนตั๋วรถไฟ","เอาเสื้อกันหนาวไปด้วย"]},
+{t:"~07:35",n:"สถานีรถไฟฉงชิ่งตง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"didi",h:"ราว 30–40 นาที",notes:["ถึงก่อนรถออก 30–45 นาที","สแกนพาสปอร์ตเข้าสถานี แล้วตรวจกระเป๋า"]},
+{t:"08:43",n:"ถึงสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"train",tk:{a:"ฉงชิ่งตง",az:"重庆东站",d:"08:08",b:"อู่หลงหนาน",bz:"武隆南站",e:"08:43"},notes:["ลงแล้วตามป้ายรถรับส่งไปเซียนหนวี่ซาน 仙女山"]},
+{t:"~09:30",n:"ศูนย์ต้อนรับนักท่องเที่ยว",pin:"ศูนย์ต้อนรับ",ic:"bus",zh:"仙女山游客接待中心",at:P.xns,m:"bus",h:"ราว 40 นาที",notes:["ซื้อหรือแลกตั๋วสะพานสวรรค์ที่นี่","ขึ้นรถเข้าเขตชมวิวที่ชั้น B2"]},
+{t:"เช้า–บ่าย",n:"เที่ยวสะพานสวรรค์",pin:"สะพานสวรรค์",ic:"bridge",zh:"天生三桥",at:P.sanqiao,m:"bus",h:"รถ 5 นาที แล้วเดิน 7–8 นาที",notes:["เดินทางเดียว ราว 4 กม. ช่วงแรกเป็นทางลง"]},
+{t:"~15:00",n:"ออกจากอุทยาน กลับสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"bus",h:"ราว 40 นาทีขึ้นไป",notes:["ออกจากอุทยานราว 15:00 เพราะรถไฟออก 16:47"]},
+{t:"17:30",n:"ถึงสถานีฉงชิ่งตง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"train",tk:{a:"อู่หลงหนาน",az:"武隆南站",d:"16:47",b:"ฉงชิ่งตง",bz:"重庆东站",e:"17:30"},notes:["เรียก DiDi ที่จุดเรียกรถ 网约车上车点"]},
+{t:"~18:15",n:"หงหยาต้ง",pin:"หงหยาต้ง",ic:"lantern",zh:"洪崖洞",at:P.hyd,m:"didi",h:"ราว 30–40 นาที",notes:["ช่วงเย็นรถอาจติด"]},
+{t:"ค่ำ",n:"กินหม้อไฟ Huang Jia Ma Tou",pin:"หม้อไฟ",ic:"hotpot",at:P.hotpot,m:"walk",h:"แถวหงหยาต้ง",notes:["ไม่กินเผ็ด สั่งหม้อสองช่อง 鸳鸯锅 และขอเผ็ดน้อย 微辣","ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
+{t:"หลังอาหาร",n:"เดินชมไฟหงหยาต้ง",pin:"ชมไฟ",ic:"lantern",zh:"洪崖洞",at:P.hyd,m:"walk",h:"ข้างร้าน",notes:["มุมถ่ายรูปสวยคือฝั่งสะพาน 千厮门大桥"]},
+{t:"ปิดท้าย",n:"เดินกลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"walk",h:"ราว 15 นาที ขึ้นเนิน",notes:[]}]},
+{tab:"วันที่ 3",sub:"ส 28",title:"วันที่ 3 · เสาร์ 28 พ.ย.",theme:"เมืองเก่า หมูกระทะบนเขา แล้วดูโดรน",stops:[
+{t:"08:00",n:"ออกจากโรงแรม กินข้าวเช้า",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["ลองเสี่ยวเมี่ยน 小面 บะหมี่มื้อเช้าของคนฉงชิ่ง"]},
+{t:"เช้า–เที่ยง",n:"เมืองเก่าฉือชี่โข่ว",pin:"ฉือชี่โข่ว",ic:"oldtown",zh:"磁器口古镇",at:P.ciqikou,m:"didi",h:"ราว 30–40 นาที",notes:["วันเสาร์สายๆ คนแน่นมาก มาเช้าดีแล้ว"]},
+{t:"บ่าย",n:"ถนนเก่าหลงเหมินฮ่าว",pin:"หลงเหมินฮ่าว",ic:"oldtown",zh:"龙门浩老街",at:P.lmh,m:"didi",h:"ราว 40 นาที",notes:["มีวิวข้ามแม่น้ำ เห็นตัวเมือง"]},
+{t:"เย็น",n:"หมูกระทะบนเขาหนานซาน",pin:"หมูกระทะ",ic:"bbq",zh:"黄玉明烤肉",at:P.nanshan,m:"didi",h:"ราว 20 นาที ขึ้นเขา",notes:["อยากเห็นโดรนชัวร์ ให้กินเสร็จราว 19:45"]},
+{t:"20:30–20:50",n:"ดูโดรนโชว์ ริมแม่น้ำ",pin:"โดรนโชว์",ic:"drone",zh:"南滨路",at:P.nanbin,m:"didi",h:"ราว 20 นาที (ถ้าดูจากร้านไม่เห็น)",notes:["ถ้าฝนตกหรืออากาศไม่ดี โชว์อาจงด"]},
+{t:"หลังโชว์",n:"กลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"didi",h:"ราว 15–20 นาที",notes:["หลังโชว์คนเรียกรถเยอะ อาจต้องรอ"]}]},
+{tab:"วันที่ 4",sub:"อา 29",title:"วันที่ 4 · อาทิตย์ 29 พ.ย.",theme:"เดินเล่นช่วงเช้า แล้วบินกลับบ้าน",stops:[
+{t:"เช้า–11:30",n:"กินข้าว เดินเล่น แล้วเช็กเอาต์",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["เก็บกระเป๋าให้เสร็จก่อนออกไปเดิน"]},
+{t:"~12:30",n:"สนามบินเจียงเป่ย",pin:"สนามบิน",ic:"plane",zh:"重庆江北国际机场",at:P.airport,m:"didi",h:"ราว 40–60 นาที",notes:["บอกคนขับเลขอาคาร (Terminal) ตามตั๋ว","ถึงก่อนเครื่องออกราว 2.5 ชั่วโมง"]},
+{t:"15:15",n:"บิน PN6429 กลับกรุงเทพฯ",pin:"กลับกรุงเทพฯ",ic:"plane",at:P.bkk,m:"plane",tk:{a:"ฉงชิ่ง",az:"CKG",d:"15:15",b:"กรุงเทพฯ",bz:"BKK",e:"17:30"},notes:["17:30 เป็นเวลาไทย (ไทยช้ากว่าจีน 1 ชั่วโมง)"]}]}];
+const $=id=>document.getElementById(id);
+const svg=$("map");
+const K=111.3,CL=Math.cos(29.56*Math.PI/180);
+const proj=a=>[(a[0]-106.58)*CL*K,-(a[1]-29.56)*K];
+let st={d:0,i:0},cam={x:0,y:0,s:60},anim=null,raf=0,facing=1;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mctx=document.createElement("canvas").getContext("2d");
+function tw(t){mctx.font='800 16px "Noto Sans Thai", sans-serif';return mctx.measureText(t).width}
+function fit(list){
+ const W=svg.clientWidth||360,H=svg.clientHeight||340;
+ const ps=list.map(proj);const xs=ps.map(p=>p[0]),ys=ps.map(p=>p[1]);
+ const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+ const s=Math.min((W-150)/Math.max(x1-x0,1.2),(H-170)/Math.max(y1-y0,1.2),300);
+ return{x:(x0+x1)/2,y:(y0+y1)/2+18/s,s:Math.max(s,.5)};
+}
+function person(x,y,ph,walking){
+ const lg=walking?Math.sin(ph)*5:0,b=walking?-Math.abs(Math.sin(ph))*1.6:0;
+ return `<g transform="translate(${x.toFixed(1)},${(y+b).toFixed(1)}) scale(${facing},1)"><ellipse cx="0" cy="1" rx="10" ry="2.8" fill="#000" opacity=".15"/><line x1="-3" y1="-9" x2="${-3+lg}" y2="0" stroke="#1d3557" stroke-width="3.4" stroke-linecap="round"/><line x1="3" y1="-9" x2="${3-lg}" y2="0" stroke="#1d3557" stroke-width="3.4" stroke-linecap="round"/><rect x="-11" y="-21" width="6" height="10" rx="2.5" fill="#1f6fd1"/><rect x="-7" y="-22" width="14" height="14" rx="5" fill="#ffc845"/><circle cx="0" cy="-30" r="9" fill="#f9d7bd"/><path d="M-9.5 -31 Q-9 -41 0 -41 Q9 -41 9.5 -31 Q5 -35.5 0 -34 Q-5 -35.5 -9.5 -31Z" fill="#1d3557"/><circle cx="-3.2" cy="-29" r="1.4" fill="#1d3557"/><circle cx="3.2" cy="-29" r="1.4" fill="#1d3557"/><path d="M-2.6 -25.4 Q0 -23.2 2.6 -25.4" fill="none" stroke="#c0504d" stroke-width="1.3" stroke-linecap="round"/><circle cx="-6" cy="-26.5" r="1.8" fill="#f4a7a7" opacity=".85"/><circle cx="6" cy="-26.5" r="1.8" fill="#f4a7a7" opacity=".85"/></g>`;
+}
+const head=(x,y)=>`<circle cx="${x}" cy="${y}" r="5" fill="#f9d7bd"/><path d="M${x-5} ${y-1} Q${x} ${y-8} ${x+5} ${y-1}Z" fill="#1d3557"/>`;
+function ride(m,x,y,ang){
+ const T=`translate(${x.toFixed(1)},${y.toFixed(1)})`;
+ if(m==="plane")return `<g transform="${T} rotate(${ang+90}) translate(-22,-22) scale(.92)">${IC.plane}</g>`;
+ let v;
+ if(m==="didi")v=`<ellipse cx="0" cy="1" rx="19" ry="3" fill="#000" opacity=".15"/><path d="M-18 -4 V-11 Q-18 -14 -14 -14 H-8 L-3 -21 H8 Q11 -21 13 -16 L17 -13 Q19 -12 19 -10 V-4 Z" fill="#f59b23"/>${head(3,-17)}<path d="M-6 -14 L-2 -19.5 H7.5 L10.5 -14 Z" fill="#dff0ff" opacity=".55"/><circle cx="-10" cy="-3" r="4.2" fill="#33475b"/><circle cx="11" cy="-3" r="4.2" fill="#33475b"/>`;
+ else if(m==="train")v=`<ellipse cx="0" cy="1" rx="25" ry="3" fill="#000" opacity=".15"/><rect x="-26" y="-22" width="48" height="19" rx="4" fill="#1f6fd1"/><path d="M22 -22 Q30 -18 30 -9 V-3 H22 Z" fill="#1559ad"/>${head(-10,-14)}<rect x="-16" y="-19" width="12" height="8" rx="2" fill="#dff0ff" opacity=".55"/><rect x="0" y="-19" width="10" height="8" rx="2" fill="#dff0ff"/><rect x="-26" y="-7" width="56" height="3" fill="#fff" opacity=".7"/>`;
+ else v=`<ellipse cx="0" cy="1" rx="20" ry="3" fill="#000" opacity=".15"/><rect x="-19" y="-24" width="38" height="20" rx="5" fill="#f2a541"/>${head(-9,-16)}<rect x="-15" y="-21" width="11" height="8" rx="1.5" fill="#fff" opacity=".55"/><rect x="-1" y="-21" width="8" height="8" rx="1.5" fill="#fff"/><rect x="9" y="-21" width="7" height="8" rx="1.5" fill="#fff"/><circle cx="-10" cy="-3" r="4.2" fill="#33475b"/><circle cx="10" cy="-3" r="4.2" fill="#33475b"/>`;
+ return `<g transform="${T} scale(${facing},1)">${v}</g>`;
+}
+function render(){
+ const W=svg.clientWidth,H=svg.clientHeight;if(!W)return;
+ const S=a=>{const p=proj(a);return[(p[0]-cam.x)*cam.s+W/2,(p[1]-cam.y)*cam.s+H/2]};
+ const stops=DAYS[st.d].stops,cur=st.i;
+ let h=`<rect width="${W}" height="${H}" fill="var(--land)"/>`;
+ for(const r of RIV)h+=`<polyline points="${r.pts.map(p=>S(p).map(v=>v.toFixed(1)).join(",")).join(" ")}" fill="none" stroke="var(--river)" stroke-width="${r.w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+ if(cam.s>5)for(const r of RIV){const p=S(r.lab);h+=`<text class="rl" x="${p[0]}" y="${p[1]}" text-anchor="middle">${r.name}</text>`}
+ for(const [n,a,city] of DIST){if(city?cam.s>14:cam.s<40){const p=S(a);h+=`<text class="lab" x="${p[0]}" y="${p[1]}" text-anchor="middle">${n}</text>`}}
+ for(let k=1;k<stops.length;k++){
+  const a=S(stops[k-1].at),m=stops[k].m;let b=S(stops[k].at);
+  const on=k<cur||k===cur;
+  if(k===cur&&anim)b=[a[0]+(b[0]-a[0])*anim.p,a[1]+(b[1]-a[1])*anim.p];
+  const dash=m==="walk"?"1 9":m==="plane"?"10 8":on?"none":"6 8";
+  h+=`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${on?"#1f6fd1":"#9fb4c8"}" stroke-width="${m==="train"?6:4}" stroke-linecap="round" stroke-dasharray="${dash}" opacity="${on?1:.6}"/>`;
+ }
+ const arrived=!anim||cur===0;
+ stops.forEach((s,k)=>{if(k===cur&&arrived)return;const p=S(s.at),past=k<cur;
+  h+=`<circle cx="${p[0]}" cy="${p[1]}" r="14" fill="${past?"#1f6fd1":"#fff"}" stroke="#1f6fd1" stroke-width="2"/><text class="nb" x="${p[0]}" y="${p[1]+5}" text-anchor="middle" fill="${past?"#fff":"#1f6fd1"}">${k+1}</text>`});
+ const c=stops[cur],cp=S(c.at);
+ if(!arrived){
+  const a=proj(stops[cur-1].at),b=proj(c.at);
+  const q=[(a[0]+(b[0]-a[0])*anim.p-cam.x)*cam.s+W/2,(a[1]+(b[1]-a[1])*anim.p-cam.y)*cam.s+H/2];
+  const ang=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;
+  h+=c.m==="walk"?person(q[0],q[1],anim.p*26,true):ride(c.m,q[0],q[1],ang);
+ }else{
+  const wN=tw(c.pin)+28,below=cp[1]+90<H;
+  const ly=below?cp[1]+36:cp[1]-36-34;let lx=Math.min(Math.max(cp[0]-wN/2,6),W-wN-6);
+  h+=`<g class="pop"><circle cx="${cp[0]}" cy="${cp[1]}" r="30" fill="#fff" stroke="#1f6fd1" stroke-width="3"/><g transform="translate(${cp[0]-21},${cp[1]-21}) scale(.875)">${IC[c.ic]}</g><rect x="${lx}" y="${ly}" width="${wN}" height="34" rx="17" fill="#1f6fd1"/><text class="nm" x="${lx+wN/2}" y="${ly+23}" text-anchor="middle">${c.pin}</text></g>`;
+  h+=person(cp[0]+(cp[0]<W-70?40:-40),cp[1]+28,0,false);
+ }
+ svg.innerHTML=h;
+}
+function target(){const s=DAYS[st.d].stops;return st.i===0?fit(s.map(x=>x.at)):fit([s[st.i-1].at,s[st.i].at])}
+function fly(){
+ cancelAnimationFrame(raf);const from={...cam},to=target();
+ const s=DAYS[st.d].stops;if(st.i>0){const dx=proj(s[st.i].at)[0]-proj(s[st.i-1].at)[0];if(Math.abs(dx)>.01)facing=dx<0?-1:1}
+ if(reduce){cam=to;anim=null;render();return}
+ const t0=performance.now(),D=st.i===0?900:2000;anim={p:st.i===0?1:0};
+ const f=now=>{const p=Math.min(1,(now-t0)/D),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+  cam={x:from.x+(to.x-from.x)*e,y:from.y+(to.y-from.y)*e,s:Math.exp(Math.log(from.s)+(Math.log(to.s)-Math.log(from.s))*e)};
+  if(st.i>0)anim.p=e;render();if(p<1)raf=requestAnimationFrame(f);else{anim=null;render()}};
+ raf=requestAnimationFrame(f);
+}
+function card(){
+ const day=DAYS[st.d],s=day.stops[st.i],n=day.stops.length,last=st.i===n-1;
+ $("dayline").innerHTML=`${day.title}<span>${day.theme}</span>`;
+ $("count").textContent=`จุดที่ ${st.i+1} จาก ${n}`;
+ $("prev").disabled=st.d===0&&st.i===0;
+ $("next").textContent=last?(st.d<DAYS.length-1?"ไปวันถัดไป":"จบทริป"):"ต่อไป";$("next").disabled=last&&st.d===DAYS.length-1;
+ let h=`<div class="time">${s.t}</div><h2>${s.n}</h2>`;
+ h+=`<div class="how"><span class="pill">${ML[s.m]}</span>${s.h?`<span>${s.h}</span>`:""}</div>`;
+ if(s.tk)h+=`<div class="ticket"><div><small>${s.m==="plane"?"ออกจาก":"ขึ้นที่สถานี"}</small><b>${s.tk.a}</b><span lang="zh">${s.tk.az}</span><em>${s.tk.d}</em></div><div class="arr" aria-hidden="true">→</div><div><small>${s.m==="plane"?"ถึง":"ลงที่สถานี"}</small><b>${s.tk.b}</b><span lang="zh">${s.tk.bz}</span><em>${s.tk.e}</em></div></div>`;
+ if(s.zh)h+=`<div class="zh"><span lang="zh">${s.zh}</span><div class="row"><button class="copy" data-zh="${s.zh}">คัดลอกชื่อจีน</button><small class="toast" id="toast">ยื่นให้คนขับดูได้เลย</small></div></div>`;
+ if(s.notes.length)h+=`<ul class="notes">${s.notes.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+ $("card").innerHTML=h;
+ [...$("tabs").children].forEach((b,k)=>b.setAttribute("aria-selected",k===st.d));
+}
+function go(d,i){st={d,i};card();fly();try{localStorage.setItem("cqtrip2",JSON.stringify(st))}catch(e){}if(location.hash!=="#day"+(d+1))history.replaceState(null,"","#day"+(d+1))}
+function next(){const n=DAYS[st.d].stops.length;if(st.i<n-1)go(st.d,st.i+1);else if(st.d<DAYS.length-1)go(st.d+1,0)}
+function prev(){if(st.i>0)go(st.d,st.i-1);else if(st.d>0)go(st.d-1,DAYS[st.d-1].stops.length-1)}
+$("tabs").innerHTML=DAYS.map((d,k)=>`<button role="tab" data-d="${k}">${d.tab}<small>${d.sub}</small></button>`).join("");
+$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(+b.dataset.d,0)});
+$("next").addEventListener("click",next);$("prev").addEventListener("click",prev);
+document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();else if(e.key==="ArrowLeft")prev()});
+$("card").addEventListener("click",async e=>{const b=e.target.closest(".copy");if(!b)return;const t=$("toast");
+ try{await navigator.clipboard.writeText(b.dataset.zh);t.textContent="คัดลอกแล้ว"}catch(err){t.textContent="คัดลอกไม่ได้ ให้ยื่นจอให้คนขับดูแทน"}});
+window.addEventListener("hashchange",()=>{const m=location.hash.match(/^#day([1-4])$/);if(m&&+m[1]-1!==st.d)go(+m[1]-1,0)});
+const ro=new ResizeObserver(()=>{if(!anim){cam=target();render()}});ro.observe(svg);
+let start={d:0,i:0};try{const v=JSON.parse(localStorage.getItem("cqtrip2"));if(v&&DAYS[v.d]&&DAYS[v.d].stops[v.i])start=v}catch(e){}
+const hm=location.hash.match(/^#day([1-4])$/);if(hm&&+hm[1]-1!==start.d)start={d:+hm[1]-1,i:0};
+st=start;card();cam=target();render();
+if(document.fonts)document.fonts.ready.then(()=>{if(!anim)render()});
+}
+</script>
+</body>
+</html>
