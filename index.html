@@ -56,6 +56,10 @@ button:focus-visible{outline:3px solid #ffc845;outline-offset:2px}
 .ticket .arr{font-size:26px;color:var(--blueInk)}
 .notes{margin:0;padding-left:22px}.notes li{margin:6px 0}
 .toast{display:block;min-height:1.4em}
+.zh span{-webkit-user-select:all;user-select:all}
+.copy.ok{background:var(--blue);color:#fff}
+.warn{margin:0 0 14px;padding:12px 14px;border-radius:14px;background:light-dark(#fff3d1,#3a2f12);color:light-dark(#5c4300,#ffe3a1);border:1.5px solid light-dark(#f0c75e,#7a6123)}
+.warn b{display:block}
 .lab{font:700 16px "Noto Sans Thai",sans-serif;fill:var(--mute);opacity:.6}
 .rl{font:400 14px "Noto Sans Thai",sans-serif;fill:light-dark(#2d6a9c,#9ccbf0)}
 .nm{font:800 16px "Noto Sans Thai",sans-serif;fill:#fff}
@@ -84,7 +88,7 @@ button:focus-visible{outline:3px solid #ffc845;outline-offset:2px}
 </main>
 <script>
 {
-const P={hotel:[106.5770,29.5577],luohan:[106.5833,29.5612],raffles:[106.5862,29.5655],huoyan:[106.5850,29.5640],shibati:[106.5735,29.5525],beer:[106.5760,29.5545],kuixing:[106.5795,29.5640],bayi:[106.5748,29.5568],cqeast:[106.6520,29.5060],wlS:[107.7000,29.3300],xns:[107.7350,29.4450],sanqiao:[107.7950,29.4300],hyd:[106.5805,29.5655],hotpot:[106.5822,29.5649],ciqikou:[106.4480,29.5815],lmh:[106.5930,29.5555],nanshan:[106.6060,29.5460],nanbin:[106.5850,29.5500],airport:[106.6420,29.7190],bkk:[106.5950,29.6850]};
+const P={hotel:[106.5770,29.5577],luohan:[106.5833,29.5612],raffles:[106.5862,29.5655],huoyan:[106.5850,29.5640],shibati:[106.5735,29.5525],beer:[106.5760,29.5545],kuixing:[106.5795,29.5640],bayi:[106.5748,29.5568],cqeast:[106.6520,29.5060],wlS:[107.7000,29.3300],xns:[107.7350,29.4450],sanqiao:[107.7950,29.4300],hyd:[106.5805,29.5655],hotpot:[106.5822,29.5649],ciqikou:[106.4480,29.5815],lmh:[106.5930,29.5555],nanshan:[106.6060,29.5460],nanbin:[106.5850,29.5500],airport:[106.6420,29.7190],bkk:[106.5950,29.6850],jfb:[106.5772,29.5585],ciqLunch:[106.4505,29.5798],lmhView:[106.5948,29.5543],nanshanView:[106.6072,29.5468]};
 const RIV=[
 {w:10,name:"แม่น้ำแยงซี",lab:[106.505,29.486],pts:[[106.36,29.39],[106.46,29.47],[106.51,29.50],[106.54,29.525],[106.555,29.540],[106.572,29.547],[106.585,29.556],[106.592,29.567],[106.61,29.578],[106.64,29.59],[106.68,29.605],[106.74,29.60],[106.80,29.62],[107.0,29.68],[107.39,29.71],[107.7,29.85]]},
 {w:8,name:"แม่น้ำเจียหลิง",lab:[106.50,29.592],pts:[[106.36,29.66],[106.42,29.60],[106.44,29.588],[106.47,29.578],[106.51,29.580],[106.54,29.574],[106.565,29.570],[106.58,29.570],[106.592,29.567]]},
@@ -107,37 +111,40 @@ hotpot:'<path d="M17 16 q-3 -4 0 -8 M24 15 q-3 -4 0 -9 M31 16 q-3 -4 0 -8" fill=
 oldtown:'<rect x="10" y="22" width="28" height="20" fill="#f1e3cc"/><path d="M4 21 Q24 7 44 21 L40 23 H8 Z" fill="#33475b"/><rect x="20" y="29" width="8" height="13" fill="#8a5a2b"/><rect x="12" y="27" width="5" height="5" fill="#8a5a2b"/><rect x="31" y="27" width="5" height="5" fill="#8a5a2b"/><ellipse cx="8" cy="29" rx="3" ry="3.8" fill="#e04b3c"/><ellipse cx="40" cy="29" rx="3" ry="3.8" fill="#e04b3c"/>',
 bbq:'<path d="M24 15 q-5 -5 0 -10 q5 5 0 10" fill="#f5a623"/><line x1="16" y1="29" x2="12" y2="43" stroke="#33475b" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="29" x2="36" y2="43" stroke="#33475b" stroke-width="2.6" stroke-linecap="round"/><ellipse cx="24" cy="25" rx="17" ry="6.5" fill="#33475b"/><path d="M10 23 H38 M12 26 H36" stroke="#9aa9b8" stroke-width="1.5"/><rect x="14" y="19" width="8" height="3.2" rx="1.6" fill="#d9734a"/><rect x="25" y="18" width="9" height="3.2" rx="1.6" fill="#d9734a"/>',
 drone:'<line x1="10" y1="16" x2="38" y2="34" stroke="#33475b" stroke-width="2.2"/><line x1="38" y1="16" x2="10" y2="34" stroke="#33475b" stroke-width="2.2"/><ellipse cx="10" cy="15" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="38" cy="15" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="10" cy="35" rx="7" ry="2.2" fill="#7fb2e5"/><ellipse cx="38" cy="35" rx="7" ry="2.2" fill="#7fb2e5"/><rect x="17" y="21" width="14" height="8" rx="3" fill="#1f6fd1"/><circle cx="24" cy="7" r="1.8" fill="#ffc845"/><circle cx="16" cy="5" r="1.3" fill="#ffc845"/><circle cx="32" cy="5" r="1.3" fill="#ffc845"/>',
+monument:'<rect x="14" y="38" width="20" height="5" rx="1" fill="#5b7fa8"/><rect x="19" y="14" width="10" height="25" fill="#7fa7d6"/><polygon points="19,14 24,4 29,14" fill="#1f6fd1"/><circle cx="24" cy="21" r="3.4" fill="#fff" stroke="#1f6fd1" stroke-width="1.3"/>',
+camera:'<rect x="16" y="10" width="12" height="7" rx="2" fill="#33475b"/><rect x="7" y="15" width="34" height="24" rx="5" fill="#33475b"/><circle cx="24" cy="27" r="8" fill="#9cc7e4" stroke="#fff" stroke-width="2.5"/><circle cx="35" cy="20" r="1.8" fill="#ffc845"/>',
 plane:'<path d="M24 4 C26.5 4 27 7 27 10 V19 L42 28 V32 L27 27 V36 L32 40 V43 L24 41 L16 43 V40 L21 36 V27 L6 32 V28 L21 19 V10 C21 7 21.5 4 24 4 Z" fill="#1f6fd1"/>'};
 const DAYS=[
-{tab:"วันที่ 1",sub:"พฤ 26",title:"วันที่ 1 · พฤหัสฯ 26 พ.ย.",theme:"เดินเที่ยวในเมือง (หยูจง) ทั้งวัน",stops:[
-{t:"07:30",n:"ออกจากโรงแรม ย่านเจี่ยฟางเปย",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["เจี่ยฟางเปยคือใจกลางเมือง"]},
-{t:"08:00–08:40",n:"วัดหลัวฮั่น",pin:"วัดหลัวฮั่น",ic:"temple",zh:"罗汉寺",at:P.luohan,m:"walk",h:"ราว 10–15 นาที",notes:["วัดเก่าราวพันปี อยู่กลางตึกสูง","มีห้องรูปปั้นพระอรหันต์ 500 องค์"]},
-{t:"09:00–11:00",n:"Raffles City",pin:"Raffles City",ic:"towers",zh:"重庆来福士",at:P.raffles,m:"walk",h:"ราว 10 นาที",notes:["ร้านส่วนใหญ่เปิดราว 10:00","ปลายแหลมตรงนี้คือจุดที่แม่น้ำสองสายมาบรรจบกัน"]},
-{t:"11:00–13:30",n:"บุฟเฟต์ Huoyanli แล้วพักช้อปปิ้ง",pin:"บุฟเฟต์",ic:"food",at:P.huoyan,m:"walk",h:"ย่านเดียวกัน",notes:["ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
-{t:"14:00–16:00",n:"สือปาถี (บันได 18 ขั้น)",pin:"สือปาถี",ic:"stairs",zh:"十八梯",at:P.shibati,m:"didi",h:"ราว 15–20 นาที",notes:["ทางชัน ใส่รองเท้าที่เดินสบาย"]},
-{t:"16:00–17:00",n:"Qingdao Beer Exchange",pin:"ร้านเบียร์",ic:"beer",at:P.beer,m:"walk",h:"ตามแพลน",notes:["ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
-{t:"17:00–18:30",n:"ตึก 22 ชั้น (Kuixinglou)",pin:"ตึก 22 ชั้น",ic:"b22",zh:"魁星楼",at:P.kuixing,m:"walk",h:"เดินกลับเข้าเมือง",notes:["ชั้นบนสุดอยู่ระดับถนนพอดี ถ่ายรูปสนุก"]},
-{t:"19:00–20:00",n:"ถนนปาอี ชิมของกิน",pin:"ถนนปาอี",ic:"food",zh:"八一好吃街",at:P.bayi,m:"walk",h:"ราว 10 นาที",notes:["คนแน่น ระวังมือถือและกระเป๋า"]},
-{t:"20:00",n:"กลับโรงแรม พักผ่อน",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"walk",h:"ราว 5 นาที",notes:[]}]},
-{tab:"วันที่ 2",sub:"ศ 27",title:"วันที่ 2 · ศุกร์ 27 พ.ย.",theme:"นั่งรถไฟไปสะพานสวรรค์ ค่ำกลับมาหงหยาต้ง",stops:[
-{t:"07:00",n:"ออกจากโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["ทุกคนพกพาสปอร์ต ใช้แทนตั๋วรถไฟ","เอาเสื้อกันหนาวไปด้วย"]},
-{t:"~07:35",n:"สถานีรถไฟฉงชิ่งตง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"didi",h:"ราว 30–40 นาที",notes:["ถึงก่อนรถออก 30–45 นาที","สแกนพาสปอร์ตเข้าสถานี แล้วตรวจกระเป๋า"]},
-{t:"08:43",n:"ถึงสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"train",tk:{a:"ฉงชิ่งตง",az:"重庆东站",d:"08:08",b:"อู่หลงหนาน",bz:"武隆南站",e:"08:43"},notes:["ลงแล้วตามป้ายรถรับส่งไปเซียนหนวี่ซาน 仙女山"]},
-{t:"~09:30",n:"ศูนย์ต้อนรับนักท่องเที่ยว",pin:"ศูนย์ต้อนรับ",ic:"bus",zh:"仙女山游客接待中心",at:P.xns,m:"bus",h:"ราว 40 นาที",notes:["ซื้อหรือแลกตั๋วสะพานสวรรค์ที่นี่","ขึ้นรถเข้าเขตชมวิวที่ชั้น B2"]},
-{t:"เช้า–บ่าย",n:"เที่ยวสะพานสวรรค์",pin:"สะพานสวรรค์",ic:"bridge",zh:"天生三桥",at:P.sanqiao,m:"bus",h:"รถ 5 นาที แล้วเดิน 7–8 นาที",notes:["เดินทางเดียว ราว 4 กม. ช่วงแรกเป็นทางลง"]},
-{t:"~15:00",n:"ออกจากอุทยาน กลับสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"bus",h:"ราว 40 นาทีขึ้นไป",notes:["ออกจากอุทยานราว 15:00 เพราะรถไฟออก 16:47"]},
-{t:"17:30",n:"ถึงสถานีฉงชิ่งตง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"train",tk:{a:"อู่หลงหนาน",az:"武隆南站",d:"16:47",b:"ฉงชิ่งตง",bz:"重庆东站",e:"17:30"},notes:["เรียก DiDi ที่จุดเรียกรถ 网约车上车点"]},
-{t:"~18:15",n:"หงหยาต้ง",pin:"หงหยาต้ง",ic:"lantern",zh:"洪崖洞",at:P.hyd,m:"didi",h:"ราว 30–40 นาที",notes:["ช่วงเย็นรถอาจติด"]},
-{t:"ค่ำ",n:"กินหม้อไฟ Huang Jia Ma Tou",pin:"หม้อไฟ",ic:"hotpot",at:P.hotpot,m:"walk",h:"แถวหงหยาต้ง",notes:["ไม่กินเผ็ด สั่งหม้อสองช่อง 鸳鸯锅 และขอเผ็ดน้อย 微辣","ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
-{t:"หลังอาหาร",n:"เดินชมไฟหงหยาต้ง",pin:"ชมไฟ",ic:"lantern",zh:"洪崖洞",at:P.hyd,m:"walk",h:"ข้างร้าน",notes:["มุมถ่ายรูปสวยคือฝั่งสะพาน 千厮门大桥"]},
-{t:"ปิดท้าย",n:"เดินกลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"walk",h:"ราว 15 นาที ขึ้นเนิน",notes:[]}]},
-{tab:"วันที่ 3",sub:"ส 28",title:"วันที่ 3 · เสาร์ 28 พ.ย.",theme:"เมืองเก่า หมูกระทะบนเขา แล้วดูโดรน",stops:[
-{t:"08:00",n:"ออกจากโรงแรม กินข้าวเช้า",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["ลองเสี่ยวเมี่ยน 小面 บะหมี่มื้อเช้าของคนฉงชิ่ง"]},
-{t:"เช้า–เที่ยง",n:"เมืองเก่าฉือชี่โข่ว",pin:"ฉือชี่โข่ว",ic:"oldtown",zh:"磁器口古镇",at:P.ciqikou,m:"didi",h:"ราว 30–40 นาที",notes:["วันเสาร์สายๆ คนแน่นมาก มาเช้าดีแล้ว"]},
-{t:"บ่าย",n:"ถนนเก่าหลงเหมินฮ่าว",pin:"หลงเหมินฮ่าว",ic:"oldtown",zh:"龙门浩老街",at:P.lmh,m:"didi",h:"ราว 40 นาที",notes:["มีวิวข้ามแม่น้ำ เห็นตัวเมือง"]},
-{t:"เย็น",n:"หมูกระทะบนเขาหนานซาน",pin:"หมูกระทะ",ic:"bbq",zh:"黄玉明烤肉",at:P.nanshan,m:"didi",h:"ราว 20 นาที ขึ้นเขา",notes:["อยากเห็นโดรนชัวร์ ให้กินเสร็จราว 19:45"]},
-{t:"20:30–20:50",n:"ดูโดรนโชว์ ริมแม่น้ำ",pin:"โดรนโชว์",ic:"drone",zh:"南滨路",at:P.nanbin,m:"didi",h:"ราว 20 นาที (ถ้าดูจากร้านไม่เห็น)",notes:["ถ้าฝนตกหรืออากาศไม่ดี โชว์อาจงด"]},
-{t:"หลังโชว์",n:"กลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"didi",h:"ราว 15–20 นาที",notes:["หลังโชว์คนเรียกรถเยอะ อาจต้องรอ"]}]},
+{tab:"วันที่ 1",sub:"พฤ 26",title:"วันที่ 1 · พฤหัสฯ 26 พ.ย.",theme:"วัดหลัวฮั่น – Raffles City – สือปาถี – ถนนปาอี – เจี่ยฟางเปย",stops:[
+{t:"08:00",n:"กินข้าวเช้าแถวที่พัก ย่านเจี่ยฟางเปย",pin:"ข้าวเช้า",ic:"food",zh:"解放碑",at:P.hotel,m:"start",notes:["กินเสร็จแล้วเดินไปวัดหลัวฮั่น"]},
+{t:"09:00–10:00",n:"ชมวัดหลัวฮั่น (Luohan Temple)",pin:"วัดหลัวฮั่น",ic:"temple",zh:"罗汉寺",at:P.luohan,m:"walk",h:"ราว 10–15 นาที",notes:["วัดเก่าราวพันปี อยู่กลางตึกสูง","มีห้องรูปปั้นพระอรหันต์ 500 องค์"]},
+{t:"10:00",n:"ไปตึก Raffles City",pin:"Raffles City",ic:"towers",zh:"重庆来福士",at:P.raffles,m:"didi",h:"ราว 5–10 นาที (ใกล้มาก เดินได้ราว 10 นาที)",notes:["ตึกรูปใบเรือ ตรงปลายแหลมที่แม่น้ำสองสายมาบรรจบกัน"]},
+{t:"10:30–13:00",n:"รับคิว กินบุฟเฟต์ Huoyanli หรือ Jingli",pin:"บุฟเฟต์",ic:"food",at:P.huoyan,m:"walk",h:"ย่านเดียวกัน",notes:["ตำแหน่งร้านบนแผนที่โดยประมาณ เช็กในแอปอีกครั้ง"]},
+{t:"13:00–13:30",n:"ชมตึก Raffles City",pin:"ชมตึก Raffles",ic:"towers",zh:"重庆来福士",at:P.raffles,m:"walk",h:"ในย่านเดียวกัน",notes:["บนยอดมีสะพานแก้วแนวนอนเชื่อมตึก (The Crystal) ถ้าจะขึ้นไปดูให้เช็กตั๋วและเวลาเปิดก่อน"]},
+{t:"14:00–16:00",n:"เที่ยวสือปาถี เมืองแห่งขั้นบันได",pin:"สือปาถี",ic:"stairs",zh:"十八梯",at:P.shibati,m:"didi",h:"เรียกรถ 13:30 ราว 15–20 นาที",notes:["ไฮไลต์คือร้านเบียร์หุ้น (Qingdao Beer Exchange) ในย่านนี้","ทางชัน ใส่รองเท้าที่เดินสบาย"]},
+{t:"16:00",n:"ถนนปาอี ย่านของกิน",pin:"ถนนปาอี",ic:"food",zh:"八一好吃街",at:P.bayi,m:"walk",h:"ราว 10–15 นาที",notes:["สองข้างทางเต็มไปด้วยของกิน","คนแน่น ระวังมือถือและกระเป๋า"]},
+{t:"หลังถนนปาอี",n:"เดินเล่นเจี่ยฟางเปย",pin:"เจี่ยฟางเปย",ic:"monument",zh:"解放碑",at:P.jfb,m:"walk",h:"ราว 5 นาที",notes:["หอนาฬิกาเจี่ยฟางเปยคือใจกลางเมือง"]},
+{t:"21:00",n:"กลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"walk",h:"ราว 5 นาที",notes:[]}]},
+{tab:"วันที่ 2",sub:"ศ 27",title:"วันที่ 2 · ศุกร์ 27 พ.ย.",theme:"อู่หลง – หลุมฟ้า สะพานสวรรค์ – หงหยาต้ง",stops:[
+{t:"06:30",n:"ออกจากโรงแรมไปสถานีรถไฟ",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["ทุกคนพกพาสปอร์ต ใช้แทนตั๋วรถไฟ","เอาเสื้อกันหนาวไปด้วย ที่อู่หลงเย็นกว่าในเมือง"]},
+{t:"~07:10",n:"สถานีรถไฟฉงชิ่งตง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"didi",h:"ราว 30–40 นาที",notes:["สแกนพาสปอร์ตเข้าสถานี แล้วตรวจกระเป๋า","ดูจอใหญ่หาเลขขบวนรถ แล้วดูช่อง 检票口 ว่าขึ้นประตูไหน"]},
+{t:"08:43",n:"ถึงสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"train",tk:{a:"ฉงชิ่งตง",az:"重庆东站",d:"08:08",b:"อู่หลงหนาน",bz:"武隆南站",e:"08:43"},notes:["ออกจากสถานีแล้วตามป้ายรถบัสไปอุทยาน"]},
+{t:"08:50",n:"นั่งรถบัสไปศูนย์ต้อนรับนักท่องเที่ยว",pin:"ศูนย์ต้อนรับ",ic:"bus",zh:"仙女山游客接待中心",at:P.xns,m:"bus",h:"ราว 40 นาที",notes:["ซื้อหรือแลกตั๋วที่นี่ แล้วขึ้นรถเข้าเขตชมวิวที่ชั้น B2"]},
+{t:"09:20 – บ่าย",n:"เที่ยวอุทยานหลุมฟ้า–สะพานสวรรค์",pin:"สะพานสวรรค์",ic:"bridge",zh:"天生三桥",at:P.sanqiao,m:"bus",h:"รถ 5 นาที แล้วเดิน 7–8 นาที",warn:"รวมเวลารถบัสกับต่อรถแล้ว น่าจะเริ่มเดินได้จริงราว 09:45–10:00",notes:["ชมสะพานหินธรรมชาติขนาดใหญ่ หุบเขา และธรรมชาติ","เดินทางเดียว ราว 4 กม. ช่วงแรกเป็นทางลง"]},
+{t:"15:30",n:"นั่งบัสกลับสถานีอู่หลงหนาน",pin:"สถานีอู่หลงหนาน",ic:"train",zh:"武隆南站",at:P.wlS,m:"bus",h:"ราว 40 นาที",warn:"15:30 ควรเป็นเวลาที่อยู่บนรถบัสจากศูนย์ต้อนรับแล้ว ถ้าเพิ่งออกจากสะพานตอน 15:30 จะถึงสถานีราว 16:30 เสี่ยงไม่ทันรถไฟ 16:47 (ประตูปิดก่อนรถออก 4–5 นาที) แนะนำให้ออกจากสะพานราว 15:00",notes:[]},
+{t:"16:47 → 17:30",n:"ขึ้นรถไฟกลับฉงชิ่ง",pin:"สถานีฉงชิ่งตง",ic:"train",zh:"重庆东站",at:P.cqeast,m:"train",tk:{a:"อู่หลงหนาน",az:"武隆南站",d:"16:47",b:"ฉงชิ่งตง",bz:"重庆东站",e:"17:30"},notes:["ออกจากสถานีแล้วเรียก DiDi ไปหงหยาต้งที่จุดเรียกรถ 网约车上车点"]},
+{t:"18:00",n:"กินหม้อไฟร้านหวงเจียหม่าโถว (Huangjia Matou) แถวหงหยาต้ง",pin:"หม้อไฟ",ic:"hotpot",zh:"洪崖洞",zhl:"ปลายทางสำหรับ DiDi",at:P.hotpot,m:"didi",h:"ราว 30–40 นาที",warn:"เผื่อเวลาออกจากสถานีกับรถติดช่วงเย็น น่าจะถึงจริงราว 18:15–18:30",notes:["หรือกินร้านอื่นแถวนั้นก็ได้","ถ้ามีคนไม่กินเผ็ด สั่งหม้อสองช่อง 鸳鸯锅 และขอเผ็ดน้อย 微辣","ตำแหน่งร้านบนแผนที่โดยประมาณ"]},
+{t:"19:30",n:"ชมไฟหงหยาต้ง",pin:"ชมไฟ",ic:"lantern",zh:"洪崖洞",at:P.hyd,m:"walk",h:"ข้างร้าน",notes:["มุมถ่ายรูปสวยคือฝั่งสะพาน 千厮门大桥"]},
+{t:"หลังชมไฟ",n:"เดินกลับเจี่ยฟางเปย ชมเมืองยามค่ำคืน",pin:"เจี่ยฟางเปย",ic:"monument",zh:"解放碑",at:P.jfb,m:"walk",h:"ราว 15 นาที เป็นทางขึ้นเนิน",notes:["แล้วกลับโรงแรม"]}]},
+{tab:"วันที่ 3",sub:"ส 28",title:"วันที่ 3 · เสาร์ 28 พ.ย.",theme:"เที่ยวเมืองเก่า กินหมูกระทะ ชมโดรน",stops:[
+{t:"08:00–09:00",n:"หาอาหารเช้าแถวเจี่ยฟางเปย",pin:"ข้าวเช้า",ic:"food",zh:"解放碑",at:P.hotel,m:"start",notes:["ลองเสี่ยวเมี่ยน 小面 บะหมี่มื้อเช้าของคนฉงชิ่ง"]},
+{t:"09:00–12:30",n:"เที่ยวเมืองเก่าฉือชี่โข่ว",pin:"ฉือชี่โข่ว",ic:"oldtown",zh:"磁器口古镇",at:P.ciqikou,m:"didi",h:"ราว 30–40 นาที",notes:["วันเสาร์สายๆ คนแน่นมาก มาเช้าดีแล้ว"]},
+{t:"12:30–14:00",n:"กินข้าวกลางวันและพัก",pin:"ข้าวกลางวัน",ic:"food",at:P.ciqLunch,m:"walk",h:"แถวฉือชี่โข่ว",notes:["แพลนไม่ได้ระบุร้าน บนแผนที่วางไว้แถวฉือชี่โข่ว"]},
+{t:"14:00–16:30",n:"ถนนเก่าหลงเหมินฮ่าว",pin:"หลงเหมินฮ่าว",ic:"oldtown",zh:"龙门浩老街",at:P.lmh,m:"didi",h:"ราว 40 นาที ข้ามไปฝั่งหนานอั้น",notes:["มีตึกฝรั่งเก่าปนกับบ้านจีน"]},
+{t:"16:30–17:00",n:"เดินเล่น ถ่ายรูปชมวิว",pin:"ถ่ายรูปชมวิว",ic:"camera",at:P.lmhView,m:"walk",h:"ในย่านเดียวกัน",notes:["วิวข้ามแม่น้ำ เห็นเจี่ยฟางเปยกับ Raffles City"]},
+{t:"16:30",n:"เรียก DiDi ไปร้าน Huang Yuming BBQ",pin:"หมูกระทะ",ic:"bbq",zh:"黄玉明烤肉",at:P.nanshan,m:"didi",h:"ราว 20 นาที ขึ้นเขาหนานซาน",warn:"แพลนเขียน 16:30 ซ้ำกับช่วงเดินเล่นถ่ายรูป (16:30–17:00) น่าจะหมายถึงเรียกรถหลังเดินเล่นเสร็จ ราว 17:00",notes:[]},
+{t:"20:30",n:"ชมโดรนไป กินหมูกระทะไป",pin:"โดรนโชว์",ic:"drone",at:P.nanshanView,m:"walk",h:"ที่ร้านเดิม",notes:["ยังไม่แน่ว่าทุกโต๊ะจะเห็นโดรน","แผนสำรอง: ถ้ามองไม่เห็น ลงไปริมแม่น้ำหนานปินลู่ 南滨路 นั่ง DiDi ราว 20 นาที","ฝนตกหรืออากาศไม่ดีโชว์อาจงด"]},
+{t:"หลังจากนั้น",n:"กลับโรงแรม",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"didi",h:"ราว 20–25 นาที",notes:["หลังโชว์คนเรียกรถเยอะ อาจต้องรอ"]}]},
 {tab:"วันที่ 4",sub:"อา 29",title:"วันที่ 4 · อาทิตย์ 29 พ.ย.",theme:"เดินเล่นช่วงเช้า แล้วบินกลับบ้าน",stops:[
 {t:"เช้า–11:30",n:"กินข้าว เดินเล่น แล้วเช็กเอาต์",pin:"โรงแรม",ic:"hotel",zh:"解放碑",at:P.hotel,m:"start",notes:["เก็บกระเป๋าให้เสร็จก่อนออกไปเดิน"]},
 {t:"~12:30",n:"สนามบินเจียงเป่ย",pin:"สนามบิน",ic:"plane",zh:"重庆江北国际机场",at:P.airport,m:"didi",h:"ราว 40–60 นาที",notes:["บอกคนขับเลขอาคาร (Terminal) ตามตั๋ว","ถึงก่อนเครื่องออกราว 2.5 ชั่วโมง"]},
@@ -146,7 +153,7 @@ const $=id=>document.getElementById(id);
 const svg=$("map");
 const K=111.3,CL=Math.cos(29.56*Math.PI/180);
 const proj=a=>[(a[0]-106.58)*CL*K,-(a[1]-29.56)*K];
-let st={d:0,i:0},cam={x:0,y:0,s:60},anim=null,raf=0,facing=1;
+let st={d:0,i:0},cam={x:0,y:0,s:60},anim=null,raf=0,facing=1,popNext=false;
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const mctx=document.createElement("canvas").getContext("2d");
 function tw(t){mctx.font='800 16px "Noto Sans Thai", sans-serif';return mctx.measureText(t).width}
@@ -198,10 +205,10 @@ function render(){
  }else{
   const wN=tw(c.pin)+28,below=cp[1]+90<H;
   const ly=below?cp[1]+36:cp[1]-36-34;let lx=Math.min(Math.max(cp[0]-wN/2,6),W-wN-6);
-  h+=`<g class="pop"><circle cx="${cp[0]}" cy="${cp[1]}" r="30" fill="#fff" stroke="#1f6fd1" stroke-width="3"/><g transform="translate(${cp[0]-21},${cp[1]-21}) scale(.875)">${IC[c.ic]}</g><rect x="${lx}" y="${ly}" width="${wN}" height="34" rx="17" fill="#1f6fd1"/><text class="nm" x="${lx+wN/2}" y="${ly+23}" text-anchor="middle">${c.pin}</text></g>`;
+  h+=`<g class="${popNext?"pop":""}"><circle cx="${cp[0]}" cy="${cp[1]}" r="30" fill="#fff" stroke="#1f6fd1" stroke-width="3"/><g transform="translate(${cp[0]-21},${cp[1]-21}) scale(.875)">${IC[c.ic]}</g><rect x="${lx}" y="${ly}" width="${wN}" height="34" rx="17" fill="#1f6fd1"/><text class="nm" x="${lx+wN/2}" y="${ly+23}" text-anchor="middle">${c.pin}</text></g>`;
   h+=person(cp[0]+(cp[0]<W-70?40:-40),cp[1]+28,0,false);
  }
- svg.innerHTML=h;
+ svg.innerHTML=h;popNext=false;
 }
 function target(){const s=DAYS[st.d].stops;return st.i===0?fit(s.map(x=>x.at)):fit([s[st.i-1].at,s[st.i].at])}
 function fly(){
@@ -211,7 +218,7 @@ function fly(){
  const t0=performance.now(),D=st.i===0?900:2000;anim={p:st.i===0?1:0};
  const f=now=>{const p=Math.min(1,(now-t0)/D),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
   cam={x:from.x+(to.x-from.x)*e,y:from.y+(to.y-from.y)*e,s:Math.exp(Math.log(from.s)+(Math.log(to.s)-Math.log(from.s))*e)};
-  if(st.i>0)anim.p=e;render();if(p<1)raf=requestAnimationFrame(f);else{anim=null;render()}};
+  if(st.i>0)anim.p=e;render();if(p<1)raf=requestAnimationFrame(f);else{anim=null;popNext=true;render()}};
  raf=requestAnimationFrame(f);
 }
 function card(){
@@ -223,23 +230,29 @@ function card(){
  let h=`<div class="time">${s.t}</div><h2>${s.n}</h2>`;
  h+=`<div class="how"><span class="pill">${ML[s.m]}</span>${s.h?`<span>${s.h}</span>`:""}</div>`;
  if(s.tk)h+=`<div class="ticket"><div><small>${s.m==="plane"?"ออกจาก":"ขึ้นที่สถานี"}</small><b>${s.tk.a}</b><span lang="zh">${s.tk.az}</span><em>${s.tk.d}</em></div><div class="arr" aria-hidden="true">→</div><div><small>${s.m==="plane"?"ถึง":"ลงที่สถานี"}</small><b>${s.tk.b}</b><span lang="zh">${s.tk.bz}</span><em>${s.tk.e}</em></div></div>`;
- if(s.zh)h+=`<div class="zh"><span lang="zh">${s.zh}</span><div class="row"><button class="copy" data-zh="${s.zh}">คัดลอกชื่อจีน</button><small class="toast" id="toast">ยื่นให้คนขับดูได้เลย</small></div></div>`;
+ if(s.warn)h+=`<p class="warn"><b>ควรระวัง</b>${s.warn}</p>`;
+ if(s.zh)h+=`<div class="zh"><span lang="zh">${s.zh}</span><div class="row"><button type="button" class="copy" data-zh="${s.zh}">คัดลอกชื่อจีน</button><small class="toast" id="toast">${s.zhl||"ยื่นให้คนขับดูได้เลย"}</small></div></div>`;
  if(s.notes.length)h+=`<ul class="notes">${s.notes.map(x=>`<li>${x}</li>`).join("")}</ul>`;
  $("card").innerHTML=h;
  [...$("tabs").children].forEach((b,k)=>b.setAttribute("aria-selected",k===st.d));
 }
-function go(d,i){st={d,i};card();fly();try{localStorage.setItem("cqtrip2",JSON.stringify(st))}catch(e){}if(location.hash!=="#day"+(d+1))history.replaceState(null,"","#day"+(d+1))}
+function go(d,i){st={d,i};card();fly();try{localStorage.setItem("cqtrip3",JSON.stringify(st))}catch(e){}if(location.hash!=="#day"+(d+1))history.replaceState(null,"","#day"+(d+1))}
 function next(){const n=DAYS[st.d].stops.length;if(st.i<n-1)go(st.d,st.i+1);else if(st.d<DAYS.length-1)go(st.d+1,0)}
 function prev(){if(st.i>0)go(st.d,st.i-1);else if(st.d>0)go(st.d-1,DAYS[st.d-1].stops.length-1)}
 $("tabs").innerHTML=DAYS.map((d,k)=>`<button role="tab" data-d="${k}">${d.tab}<small>${d.sub}</small></button>`).join("");
 $("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(+b.dataset.d,0)});
 $("next").addEventListener("click",next);$("prev").addEventListener("click",prev);
 document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();else if(e.key==="ArrowLeft")prev()});
-$("card").addEventListener("click",async e=>{const b=e.target.closest(".copy");if(!b)return;const t=$("toast");
- try{await navigator.clipboard.writeText(b.dataset.zh);t.textContent="คัดลอกแล้ว"}catch(err){t.textContent="คัดลอกไม่ได้ ให้ยื่นจอให้คนขับดูแทน"}});
+function legacyCopy(t){const ta=document.createElement("textarea");ta.value=t;ta.setAttribute("readonly","");ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px";document.body.appendChild(ta);const y=window.scrollY;ta.focus({preventScroll:true});ta.select();ta.setSelectionRange(0,t.length);let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();window.scrollTo(0,y);return ok}
+async function copyText(t){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(t);return true}catch(e){}}return legacyCopy(t)}
+let copyTimer=0;
+$("card").addEventListener("click",async e=>{const b=e.target.closest(".copy");if(!b)return;e.preventDefault();const t=$("toast"),z=b.dataset.zh;
+ const ok=await copyText(z);clearTimeout(copyTimer);
+ if(ok){b.textContent="คัดลอกแล้ว";b.classList.add("ok");t.textContent="วางในช่องค้นหาของ DiDi ได้เลย"}else{t.textContent="คัดลอกไม่ได้ ให้ยื่นจอให้คนขับดูแทน"}
+ copyTimer=setTimeout(()=>{if(b.isConnected){b.textContent="คัดลอกชื่อจีน";b.classList.remove("ok")}},2500)});
 window.addEventListener("hashchange",()=>{const m=location.hash.match(/^#day([1-4])$/);if(m&&+m[1]-1!==st.d)go(+m[1]-1,0)});
 const ro=new ResizeObserver(()=>{if(!anim){cam=target();render()}});ro.observe(svg);
-let start={d:0,i:0};try{const v=JSON.parse(localStorage.getItem("cqtrip2"));if(v&&DAYS[v.d]&&DAYS[v.d].stops[v.i])start=v}catch(e){}
+let start={d:0,i:0};try{const v=JSON.parse(localStorage.getItem("cqtrip3"));if(v&&DAYS[v.d]&&DAYS[v.d].stops[v.i])start=v}catch(e){}
 const hm=location.hash.match(/^#day([1-4])$/);if(hm&&+hm[1]-1!==start.d)start={d:+hm[1]-1,i:0};
 st=start;card();cam=target();render();
 if(document.fonts)document.fonts.ready.then(()=>{if(!anim)render()});
